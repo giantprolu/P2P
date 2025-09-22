@@ -1,50 +1,32 @@
-include ':app'include ':app'
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
 
+plugins {
+    id 'dev.flutter.flutter-plugin-loader' version '1.0.0' apply false
+}
 
+rootProject.name = 'p2p_chat'
+include ':app'
 
-def localPropertiesFile = new File(rootProject.projectDir, "local.properties")def localPropertiesFile = new File(rootProject.projectDir, "local.properties")
+def localPropertiesFile = new File(rootProject.projectDir, "local.properties")
+def properties = new Properties()
 
-def properties = new Properties()def properties = new Properties()
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader("UTF-8") { reader ->
+        properties.load(reader)
+    }
+}
 
+def flutterSdkPath = properties.getProperty("flutter.sdk")
+if (flutterSdkPath == null) {
+    throw new GradleException("flutter.sdk not set in local.properties")
+}
 
-
-assert localPropertiesFile.exists()assert localPropertiesFile.exists()
-
-localPropertiesFile.withReader("UTF-8") { reader -> properties.load(reader) }localPropertiesFile.withReader("UTF-8") { reader -> properties.load(reader) }
-
-
-
-def flutterSdkPath = properties.getProperty("flutter.sdk")def flutterSdkPath = properties.getProperty("flutter.sdk")
-
-assert flutterSdkPath != null, "flutter.sdk not set in local.properties"assert flutterSdkPath != null, "flutter.sdk not set in local.properties"
-
-
-
-// The new declarative way to apply the Flutter plugin loader// The new declarative way to apply the Flutter plugin loader
-
-pluginManagement {pluginManagement {
-
-    repositories {    repositories {
-
-        gradlePluginPortal()        gradlePluginPortal()
-
-        google()        google()
-
-        mavenCentral()        mavenCentral()
-
-    }    }
-
-}}
-
-
-
-plugins {plugins {
-
-    id 'dev.flutter.flutter-plugin-loader' version '1.0.0'    id 'dev.flutter.flutter-plugin-loader' version '1.0.0' apply false
-
-}}
-
-// Flutter plugin settings
 gradle.beforeProject { project ->
     if (project.name == 'android') {
         project.ext.flutterSdkPath = flutterSdkPath

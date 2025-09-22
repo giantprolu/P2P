@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final appBarTheme = AppBarTheme(centerTitle: false, elevation: 0, color: kPrimaryColor);
     return MaterialApp(
-      title: APP_NAME,
+      title: appName,
       theme: ThemeData.dark().copyWith(
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: kContentColorLightTheme,

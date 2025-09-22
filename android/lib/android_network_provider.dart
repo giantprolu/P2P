@@ -8,6 +8,7 @@ class AndroidNetworkProvider extends NetworkProvider {
 
   @override
   Future<InternetAddress> getIpAddress() async {
+    // ignore: avoid_print
     print((await _listNetworkInterfaces())
         .firstWhere((nInterface) => nInterface.name.startsWith('w'))
         .addresses);

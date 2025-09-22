@@ -35,7 +35,7 @@ class Conversation {
 }
 
 enum MessageType {
-  TEXT, IMAGE, AUDIO
+  text, image, audio
 }
 
 // to avoid conflict with p2p_core Message
@@ -72,11 +72,11 @@ class DatabaseMessage {
   static MessageType fromString(String t) {
     switch (t) {
       case "IMAGE":
-        return MessageType.IMAGE;
+        return MessageType.image;
       case "AUDIO":
-        return MessageType.AUDIO;
+        return MessageType.audio;
       default:
-        return MessageType.TEXT;
+        return MessageType.text;
     }
   }
 }

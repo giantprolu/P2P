@@ -106,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
         context,
         MaterialPageRoute(
           builder: (context) => MyHomePage(
-            title: APP_NAME,
+            title: appName,
             context: Context(widget.dbHelper, userData),
             conversations: conversations,
           ),

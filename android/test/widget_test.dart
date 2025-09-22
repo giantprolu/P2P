@@ -9,9 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:p2p_chat_android/main.dart';
-import 'package:p2p_chat_android/model/models.dart';
 import 'package:p2p_chat_android/sql/database_helper.dart';
-import 'package:p2p_chat_core/p2p_chat_core.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {

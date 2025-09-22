@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text("Welcome to $APP_NAME\na Peer to Peer chat app", style: textTheme.headlineMedium?.copyWith(color: Colors.white), textAlign: TextAlign.center,),
+                Text("Welcome to $appName\na Peer to Peer chat app", style: textTheme.headlineMedium?.copyWith(color: Colors.white), textAlign: TextAlign.center,),
                 Padding(padding: EdgeInsets.symmetric(horizontal: kDefaultPadding, vertical: 32),
 
                   child: UsernameTextInputField(onSubmit: updateUsername, username: ctx.userData.username,),),
@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
           automaticallyImplyLeading: false,
           centerTitle: true,
           title: Text(
-            APP_NAME,
+            appName,
             textAlign: TextAlign.center,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
