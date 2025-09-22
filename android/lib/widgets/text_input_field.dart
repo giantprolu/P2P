@@ -60,7 +60,7 @@ class ConversationTextInputField extends StatelessWidget {
                       ),
                     ),
                     SizedBox(width: kDefaultPadding / 4),
-                    IconButton(onPressed: this.sendMessage,
+                    IconButton(onPressed: sendMessage,
                         icon: Icon(
                           Icons.send,
                           color: Theme.of(context)
@@ -93,7 +93,7 @@ class UsernameTextInputField extends StatelessWidget {
   final controller = TextEditingController();
   final Function(String) onSubmit;
 
-  UsernameTextInputField({required this.onSubmit, String? username}) {
+  UsernameTextInputField({Key? key, required this.onSubmit, String? username}) : super(key: key) {
     if (username != null) {
       controller.text = username;
     }

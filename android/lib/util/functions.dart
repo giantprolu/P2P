@@ -8,11 +8,11 @@ Future<String> getDeviceName() async {
   String name = '';
   if (Platform.isAndroid) {
     AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-    name = androidInfo.manufacturer + " " + androidInfo.model;
+    name = "${androidInfo.manufacturer} ${androidInfo.model}";
   } else {
     IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
     if (iosInfo.name.isNotEmpty && iosInfo.model.isNotEmpty) {
-      name = iosInfo.name + " " + iosInfo.model;
+      name = "${iosInfo.name} ${iosInfo.model}";
     }
   }
   if (name.isEmpty) {
@@ -26,9 +26,9 @@ Future<String> getDeviceId() async {
   // prefixing IDs to avoid ID collision
   if (Platform.isAndroid) {
     AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-    return 'android_' + androidInfo.androidId;
+    return 'android_${androidInfo.androidId}';
   } else {
     IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
-    return 'ios_' + iosInfo.identifierForVendor;
+    return 'ios_${iosInfo.identifierForVendor}';
   }
 }

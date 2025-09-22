@@ -50,13 +50,13 @@ class AuthService {
   static AuthResponse authenticate(AuthRequest request) {
     // In a real app, validate against database
     // This is just a demo implementation
-    if (request.username == "demo" && request.passwordHash == _hashPassword("password")) {
+    if (request.username == 'demo' && request.passwordHash == _hashPassword('password')) {
       final token = _generateToken();
       final userData = UserData('user_${DateTime.now().millisecondsSinceEpoch}', request.username);
       _tokenStore[token] = userData;
       return AuthResponse(true, token: token, userData: userData);
     }
-    return AuthResponse(false, message: "Invalid username or password");
+    return AuthResponse(false, message: 'Invalid username or password');
   }
   
   static bool validateToken(String token) {

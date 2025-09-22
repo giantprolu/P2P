@@ -10,15 +10,15 @@ class DesktopNetworkProvider extends NetworkProvider {
 
   @override
   Future<InternetAddress> getIpAddress() async {
-    if (this._address != null) {
+    if (_address != null) {
       return _address!;
     }
-    NetworkInterface interface = await _getPublicIpNetworkInterfaces();
+    var interface = await _getPublicIpNetworkInterfaces();
     return interface.addresses.first;
   }
 
   Future<NetworkInterface> _getPublicIpNetworkInterfaces() async {
-    List<NetworkInterface> interfaces =
+    var interfaces =
     await NetworkInterface.list(includeLoopback: false, includeLinkLocal: true);
     if (interfaces.length == 1) {
       return interfaces[1];

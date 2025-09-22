@@ -15,7 +15,7 @@ class ChatPage extends StatefulWidget {
   final Conversation conversation;
   final ChatClient chat;
   final List<Message>? messages;
-  ChatPage(this.ctx, this.conversation, this.chat, {Key? key, this.messages}) : super(key: key);
+  const ChatPage(this.ctx, this.conversation, this.chat, {Key? key, this.messages}) : super(key: key);
 
   @override
   _ChatPageState createState() => _ChatPageState(chat, ctx, conversation, messages);
@@ -37,7 +37,7 @@ class _ChatPageState extends AbstractChatPageState<ChatPage> {
   @override
   void initState() {
     super.initState();
-    chat.setMessageCallback(this.onNewMessage);
+    chat.setMessageCallback(onNewMessage);
   }
 
   @override
@@ -48,7 +48,7 @@ class _ChatPageState extends AbstractChatPageState<ChatPage> {
 
   void onError(e) {
     Fluttertoast.showToast(
-        msg: "An error occurred: " + e.toString(),
+        msg: "An error occurred: $e",
         toastLength: Toast.LENGTH_SHORT
     );
     setState(() {
@@ -83,7 +83,7 @@ abstract class AbstractChatPageState<T extends StatefulWidget> extends State<T> 
   Chat? get chat;
   // online = seeking or connected
   bool online = false;
-  ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
   bool shouldScrollDown = false;
 
   AbstractChatPageState(this.ctx, this.conversation, List<Message>? messages) {
@@ -232,7 +232,7 @@ class ChatServerPage extends StatefulWidget {
   final Conversation conversation;
 
   // optional chatServer. If not provided, one will be created in this page
-  ChatServerPage(this.ctx, this.conversation, {Key? key, this.chatServer, this.messages}) : super(key: key);
+  const ChatServerPage(this.ctx, this.conversation, {Key? key, this.chatServer, this.messages}) : super(key: key);
 
   @override
   _ChatServerPageState createState() => _ChatServerPageState(chatServer, ctx, conversation, messages);
@@ -263,12 +263,12 @@ class _ChatServerPageState extends AbstractChatPageState<ChatServerPage> {
     if (chatServer == null) {
       startChatServer();
     } else {
-      chatServer!.setMessageCallback(this.onNewMessage);
+      chatServer!.setMessageCallback(onNewMessage);
     }
   }
 
   Future<void> startChatServer() async {
-    chatServer = await ChatServer.from(AndroidNetworkProvider(), this.onNewMessage);
+    chatServer = await ChatServer.from(AndroidNetworkProvider(), onNewMessage);
 
     chatServer!.start();
   }
@@ -297,8 +297,8 @@ class _ChatServerPageState extends AbstractChatPageState<ChatServerPage> {
     if (chatServer == null) {
       return;
     }
-    String message = user != null ? 'An error occured with ${user.username}: ' + e.toString()
-        : "An error occurred: " + e.toString();
+    String message = user != null ? 'An error occured with ${user.username}: $e'
+        : "An error occurred: $e";
     Fluttertoast.showToast(msg: message, toastLength: Toast.LENGTH_SHORT);
   }
 

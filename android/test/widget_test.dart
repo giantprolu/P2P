@@ -16,7 +16,8 @@ import 'package:p2p_chat_core/p2p_chat_core.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp(Context(await DatabaseHelper.newInstance(), UserData("", "")), []));
+    DatabaseHelper dbHelper = await DatabaseHelper.newInstance();
+    await tester.pumpWidget(MyApp(dbHelper));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

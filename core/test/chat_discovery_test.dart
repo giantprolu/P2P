@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:p2p_chat_core/p2p_chat_core.dart';
-import 'package:p2p_chat_core/src/chat_discovery.dart';
 import 'package:p2p_chat_core/src/datagram.dart';
 import 'package:test/test.dart';
 
@@ -10,7 +9,7 @@ Future<List<NetworkInterface>> getNetworkInterfaces() async {
 }
 
 Future<NetworkInterface> getWifiNetworkInterface() async {
-  List<NetworkInterface> interfaces = await getNetworkInterfaces();
+  var interfaces = await getNetworkInterfaces();
   if (interfaces.length == 1) {
     return interfaces[1];
   }

@@ -86,19 +86,19 @@ class DatabaseHelper {
   Future<Map<Message, int>> convertMessages(List<DatabaseMessage> dbMessages) async {
     Set<String> userIds = dbMessages.map((m) => m.userId).toSet();
     // sniff cannot pass set or list in whereArgs
-    final List<Map<String, dynamic>> rawUsersMap = await db.query('users', where: 'id IN (' + List.filled(userIds.length, '?').join(',') + ')',
+    final List<Map<String, dynamic>> rawUsersMap = await db.query('users', where: 'id IN (${List.filled(userIds.length, '?').join(',')})',
     whereArgs: userIds.toList());
-    Map<String, UserData> userMap = new HashMap();
+    Map<String, UserData> userMap = HashMap();
 
-    rawUsersMap.forEach((map) {
+    for (var map in rawUsersMap) {
       final String userId = map['id'];
       userMap[userId] = UserData(userId, map['name']);
-    });
+    }
 
     final Map<Message, int> messageIdMap = {};
-    dbMessages.forEach((dbMessage) {
+    for (var dbMessage in dbMessages) {
       messageIdMap[Message("", userMap[dbMessage.userId]!, String.fromCharCodes(dbMessage.data), dbMessage.sentAt)] = dbMessage.id;
-    });
+    }
     return messageIdMap;
   }
 

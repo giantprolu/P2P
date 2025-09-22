@@ -12,7 +12,7 @@ import 'settings_page.dart';
 
 class MyHomePage extends StatefulWidget {
   final List<Conversation> conversations;
-  MyHomePage({Key? key, required this.title, required this.context, required this.conversations}) : super(key: key);
+  const MyHomePage({Key? key, required this.title, required this.context, required this.conversations}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
                 Text("Welcome to $APP_NAME\na Peer to Peer chat app", style: textTheme.headlineMedium?.copyWith(color: Colors.white), textAlign: TextAlign.center,),
                 Padding(padding: EdgeInsets.symmetric(horizontal: kDefaultPadding, vertical: 32),
 
-                  child: UsernameTextInputField(onSubmit: this.updateUsername, username: ctx.userData.username,),),
+                  child: UsernameTextInputField(onSubmit: updateUsername, username: ctx.userData.username,),),
                 ElevatedButton(
                   child: Text('Search chat', style: Theme
                       .of(context)
@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
           actions: [
             IconButton(
               icon: Icon(Icons.settings),
-              onPressed: this.goToSettingsPage,
+              onPressed: goToSettingsPage,
             ),
             SizedBox(width: kDefaultPadding / 2),
           ],
@@ -114,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
                 );
               },
             ),
-            Align(child: Padding(
+            Align(alignment: Alignment.bottomRight,child: Padding(
               child: FloatingActionButton(onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(
@@ -123,7 +123,6 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
                 child: const Icon(Icons.add),),
               padding: EdgeInsets.only(right: 16, bottom: 16),
             ),
-              alignment: Alignment.bottomRight,
             )
           ],
         ), // This trailing comma makes auto-formatting nicer for build methods.
@@ -284,7 +283,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
     final userData = await ctx.dbHelper.getMe();
     setState(() {
       this.conversations = conversations;
-      this.ctx.userData = userData;
+      ctx.userData = userData;
     });
   }
 }

@@ -8,7 +8,7 @@ import 'package:p2p_chat_core/p2p_chat_core.dart';
 class SettingsPage extends StatefulWidget {
   final Context ctx;
 
-  SettingsPage({Key? key, required this.ctx})
+  const SettingsPage({Key? key, required this.ctx})
       : super(key: key);
 
   @override
@@ -38,7 +38,7 @@ class _SettingsPageState extends State<SettingsPage> {
       ),
       body: Container(
         margin: EdgeInsets.symmetric(horizontal: kDefaultPadding / 2, vertical: kDefaultPadding),
-        child: UsernameTextInputField(onSubmit: this.updateUsername, username: ctx.userData.username,),
+        child: UsernameTextInputField(onSubmit: updateUsername, username: ctx.userData.username,),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }

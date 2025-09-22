@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:p2p_chat_android/model/models.dart';
 import 'package:p2p_chat_android/page/login_page.dart';
 import 'package:p2p_chat_android/sql/database_helper.dart';
-import 'package:p2p_chat_android/util/functions.dart';
 
 import 'constants.dart';
 
@@ -16,7 +14,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   final DatabaseHelper dbHelper;
 
-  MyApp(this.dbHelper);
+  const MyApp(this.dbHelper, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

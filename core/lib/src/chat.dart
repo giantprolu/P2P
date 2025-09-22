@@ -40,7 +40,7 @@ abstract class Chat {
 
   /// Sends the [text] message to the other peer
   Message sendText(String text) {
-    String messageText = text;
+    var messageText = text;
     if (encryptionKey != null) {
       messageText = MessageEncryption.encryptMessage(text, encryptionKey!);
     }
@@ -75,7 +75,7 @@ abstract class Chat {
 
   // Add method to set encryption key
   void setEncryptionKey(String key) {
-    this.encryptionKey = key;
+    encryptionKey = key;
   }
 }
 
@@ -312,7 +312,7 @@ class SmartChat extends Chat {
 
   void _listenChatPeers(List<ChatPeer> chatPeers) async {
     for (var chatPeer in chatPeers) {
-      if (chatPeer.type == PeerType.ANY && this.peerType == PeerType.ANY) {
+      if (chatPeer.type == PeerType.ANY && peerType == PeerType.ANY) {
         // these are Strings
         final ownAddress = chatServer.address.address;
         final peerAddress = chatPeer.address;

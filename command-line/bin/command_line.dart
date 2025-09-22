@@ -18,7 +18,7 @@ void main(List<String> arguments) async {
   var callback = (Message message) => print('${message.userData.username} at ${formatDate(message.sentAt)}:\n${message.text}');
   final username = argResults[USERNAME_ARG] ?? Platform.localHostname;
 
-  DesktopNetworkProvider networkProvider = DesktopNetworkProvider(argResults[ADDRESS_ARG] != null ? await toAddress(argResults[ADDRESS_ARG]) : null);
+  var networkProvider = DesktopNetworkProvider(argResults[ADDRESS_ARG] != null ? await toAddress(argResults[ADDRESS_ARG]) : null);
   Chat chat;
   if (argResults[SERVER_ARG]) {
     chat = await serverChat(callback, networkProvider, username);
@@ -105,7 +105,7 @@ Future<InternetAddress> toAddress(String address) async {
     return InternetAddress(address);
   } catch (e) {
     // Attempt to resolve hostname
-    List<InternetAddress> addresses = await InternetAddress.lookup(address);
+    var addresses = await InternetAddress.lookup(address);
     if (addresses.isNotEmpty) {
       return addresses.first;
     }

@@ -17,7 +17,7 @@ class ChatPeerMulticaster {
   Timer? timer;
 
   static Future<ChatPeerMulticaster> newInstance(List<NetworkInterface> interfaces) async {
-    List<DatagramSocket> sockets = [];
+    var sockets = <DatagramSocket>[];
     for (var interface in interfaces) {
       sockets.add(await DatagramSocket.from(PEER_DISCOVERY_PORT, groupAddress: MULTICAST_GROUP_ADDRESS, networkInterface: interface));
     }
@@ -51,7 +51,7 @@ class ChatPeerMulticaster {
 class ChatPeerListener {
 
   static Future<ChatPeerListener> newInstance(List<NetworkInterface> interfaces) async {
-    List<DatagramSocket> sockets = [];
+    var sockets = <DatagramSocket>[];
     for (var interface in interfaces) {
       sockets.add(await DatagramSocket.from(PEER_DISCOVERY_PORT, networkInterface: interface));
     }

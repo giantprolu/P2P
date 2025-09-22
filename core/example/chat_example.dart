@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:p2p_chat_core/p2p_chat_core.dart';
 

@@ -14,7 +14,7 @@ class MessageWidget extends StatefulWidget {
   final Message? previousMessage;
   final Function(Message) deleteCallback;
 
-  MessageWidget({
+  const MessageWidget({
     Key? key,
     required this.message,
     required this.userData,
@@ -170,15 +170,15 @@ class _MessageWidgetState extends State<MessageWidget> {
     return previousMessage == null || previousMessage!.userData.id != message.userData.id || message.sentAt.difference(previousMessage!.sentAt).abs().inMinutes > 10;
   }
   void _forceShowDate() {
-    if (this.cancelFuture != null) {
+    if (cancelFuture != null) {
       return;
     }
     setState(() {
       forceShowDate = true;
     });
-    this.cancelFuture = Future.delayed(const Duration(seconds: 3), () => setState(() {
+    cancelFuture = Future.delayed(const Duration(seconds: 3), () => setState(() {
       forceShowDate = false;
-      this.cancelFuture = null;
+      cancelFuture = null;
     }));
   }
 }

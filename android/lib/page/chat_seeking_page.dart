@@ -2,7 +2,6 @@ import 'dart:collection';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:p2p_chat_android/android_network_provider.dart';
 import 'package:p2p_chat_android/model/models.dart';
@@ -11,14 +10,14 @@ import 'package:p2p_chat_core/p2p_chat_core.dart';
 
 import '../constants.dart';
 
-const FAKE_CONVERSATION = const Conversation(0, 'Looking for a peer', 'some_fake_id');
+const FAKE_CONVERSATION = Conversation(0, 'Looking for a peer', 'some_fake_id');
 
 class ChatSeekingPage extends StatefulWidget {
   final Context ctx;
   final Conversation conversation;
   final bool? seeking;
 
-  ChatSeekingPage(this.ctx, {Key? key, this.conversation = FAKE_CONVERSATION, this.seeking}) : super(key: key);
+  const ChatSeekingPage(this.ctx, {Key? key, this.conversation = FAKE_CONVERSATION, this.seeking}) : super(key: key);
 
   @override
   _ChatSeekingPageState createState() => _ChatSeekingPageState(ctx, conversation, seeking);
@@ -61,13 +60,13 @@ class _ChatSeekingPageState extends AbstractChatPageState<ChatSeekingPage> {
       }
       getConversation(user).then((conversation) {
         if (!mounted) return;
-        this.keepChat = true;
+        keepChat = true;
         if (chat is ChatServer) {
           Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => ChatServerPage(ctx, conversation, chatServer: chat, messages: this.messages,)));
+              MaterialPageRoute(builder: (context) => ChatServerPage(ctx, conversation, chatServer: chat, messages: messages,)));
         } else {
           Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => ChatPage(ctx, conversation, chat as ChatClient, messages: this.messages)));
+              MaterialPageRoute(builder: (context) => ChatPage(ctx, conversation, chat as ChatClient, messages: messages)));
         }
       });
       return true;
@@ -122,10 +121,10 @@ class _ChatSeekingPageState extends AbstractChatPageState<ChatSeekingPage> {
 
   @override
   void dispose() {
-    this.multicaster?.close();
+    multicaster?.close();
     if (keepChat) {
       // to avoid super class from closing socket
-      this.chat = null;
+      chat = null;
     }
     _lock.release();
     super.dispose();

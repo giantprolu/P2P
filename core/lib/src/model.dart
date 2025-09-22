@@ -33,6 +33,7 @@ class VerifiedMessage extends Message {
 
   factory VerifiedMessage.fromJson(Map<String, dynamic> json) => _$VerifiedMessageFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$VerifiedMessageToJson(this);
 
 }

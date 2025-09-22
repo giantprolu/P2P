@@ -64,6 +64,7 @@ class WebSocketServer implements ConnectionServer<WebSocketConnection> {
     }, onError: onError, onDone: onDone);
   }
 
+  @override
   void close({bool force = false}) {
     _server.close(force: force);
   }

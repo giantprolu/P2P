@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:p2p_chat_core/p2p_chat_core.dart';
 
-import '../constants.dart';
 
 class BluetoothNetworkProvider extends NetworkProvider {
   static const MethodChannel _channel = MethodChannel('tambapps/bluetooth');

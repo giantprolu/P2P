@@ -9,7 +9,7 @@ import 'package:p2p_chat_core/p2p_chat_core.dart';
 class LoginPage extends StatefulWidget {
   final DatabaseHelper dbHelper;
 
-  LoginPage({Key? key, required this.dbHelper}) : super(key: key);
+  const LoginPage({Key? key, required this.dbHelper}) : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -201,12 +201,12 @@ class _LoginPageState extends State<LoginPage> {
             
             ElevatedButton(
               onPressed: _isLoggingIn ? null : _login,
-              child: _isLoggingIn 
-                ? CircularProgressIndicator(color: Colors.white)
-                : Text("Login"),
               style: ElevatedButton.styleFrom(
                 minimumSize: Size(double.infinity, 50),
               ),
+              child: _isLoggingIn 
+                ? CircularProgressIndicator(color: Colors.white)
+                : Text("Login"),
             ),
           ],
         ),

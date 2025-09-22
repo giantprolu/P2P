@@ -3,8 +3,11 @@ import 'dart:io';
 
 import 'package:p2p_chat_core/src/chat.dart';
 import 'package:test/test.dart';
+import 'test_network_provider.dart';
 
 final address = InternetAddress.loopbackIPv4;
+final testNetworkProvider = TestNetworkProvider(address);
+
 void main() {
   group('Message handler tests', () {
     setUp(() {
@@ -26,7 +29,7 @@ void main() {
 }
 
 Future<ChatServer> server() async {
-  final chatServer = await ChatServer.from(address, (message) {
+  final chatServer = await ChatServer.from(testNetworkProvider, (message) {
     print('Server received message ' + jsonEncode(message));
   });
   chatServer.start();

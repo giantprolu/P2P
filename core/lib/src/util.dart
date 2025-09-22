@@ -49,19 +49,19 @@ String formatMonth(int month) {
 
 String formatDate(DateTime dateTime) {
   final now = DateTime.now();
-  String time = _twoDigitsNumber(dateTime.hour) + ":" + _twoDigitsNumber(dateTime.minute);
+  var time = _twoDigitsNumber(dateTime.hour) + ':' + _twoDigitsNumber(dateTime.minute);
   if (_isSameDay(dateTime, now)) {
-    return _twoDigitsNumber(dateTime.hour) + ":" + _twoDigitsNumber(dateTime.minute);
+    return _twoDigitsNumber(dateTime.hour) + ':' + _twoDigitsNumber(dateTime.minute);
   }
-  String monthAndDay =  dateTime.day.toString() + " " + formatMonth(dateTime.month) + ".";
+  var monthAndDay =  dateTime.day.toString() + ' ' + formatMonth(dateTime.month) + '.';
   if (_isSameYear(dateTime, now)) {
-    return monthAndDay + " " + time;
+    return monthAndDay + ' ' + time;
   }
-  return monthAndDay + " " + dateTime.year.toString() + ", " + time;
+  return monthAndDay + ' ' + dateTime.year.toString() + ', ' + time;
 }
 
 String _twoDigitsNumber(int n) {
-  return n < 10 ? "0" + n.toString() : n.toString();
+  return n < 10 ? '0' + n.toString() : n.toString();
 }
 
 bool _isSameDay(DateTime d1, DateTime d2) {
