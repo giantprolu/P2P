@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:device_info/device_info.dart';
+import 'package:device_info_plus/device_info_plus.dart';
 
 Future<String> getDeviceName() async {
   DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
@@ -26,7 +26,7 @@ Future<String> getDeviceId() async {
   // prefixing IDs to avoid ID collision
   if (Platform.isAndroid) {
     AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-    return 'android_${androidInfo.androidId}';
+    return 'android_${androidInfo.id}';
   } else {
     IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
     return 'ios_${iosInfo.identifierForVendor}';

@@ -30,12 +30,12 @@ dependencies:
   cupertino_icons: ^1.0.3
   p2p_chat_core:
     path: ../core
-  google_fonts: ^2.1.0
-  device_info: ^2.0.2
+  google_fonts: ^6.3.1
+  device_info_plus: ^9.1.2
   sqflite: ^2.0.0+4
   path: ^1.8.0
-  fluttertoast: ^8.0.8
-  flutter_linkify: ^5.0.2
+  fluttertoast: ^8.2.4
+  flutter_linkify: ^6.0.0
   # needs specific configuration for iOS
   url_launcher: ^6.2.4
 
