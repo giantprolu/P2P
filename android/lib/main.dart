@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:p2p_chat_android/model/models.dart';
-import 'package:p2p_chat_android/page/home_page.dart';
+import 'package:p2p_chat_android/page/login_page.dart';
 import 'package:p2p_chat_android/sql/database_helper.dart';
 import 'package:p2p_chat_android/util/functions.dart';
 
@@ -10,15 +10,13 @@ import 'constants.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final dbHelper = await DatabaseHelper.newInstance();
-  final conversations = await dbHelper.findAllConversations();
-  runApp(MyApp(Context(dbHelper, await dbHelper.getMe()), conversations));
+  runApp(MyApp(dbHelper));
 }
 
 class MyApp extends StatelessWidget {
-  final Context context;
-  final List<Conversation> conversations;
+  final DatabaseHelper dbHelper;
 
-  MyApp(this.context, this.conversations);
+  MyApp(this.dbHelper);
 
   @override
   Widget build(BuildContext context) {
@@ -29,23 +27,15 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: kContentColorLightTheme,
         appBarTheme: appBarTheme,
-        iconTheme: IconThemeData(color: kContentColorDarkTheme),
         textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme)
-            .apply(bodyColor: kContentColorDarkTheme),
+            .apply(bodyColor: kContentColorLightTheme),
         colorScheme: ColorScheme.dark().copyWith(
           primary: kPrimaryColor,
           secondary: kSecondaryColor,
           error: kErrorColor,
         ),
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: kContentColorLightTheme,
-          selectedItemColor: Colors.white70,
-          unselectedItemColor: kContentColorDarkTheme.withOpacity(0.32),
-          selectedIconTheme: IconThemeData(color: kPrimaryColor),
-          showUnselectedLabels: true,
-        ),
       ),
-      home: MyHomePage(title: APP_NAME, context: this.context, conversations: conversations),
+      home: LoginPage(dbHelper: dbHelper),
     );
   }
 }

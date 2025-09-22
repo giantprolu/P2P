@@ -12,6 +12,7 @@ import 'util.dart';
 
 import 'chat_automation.dart';
 import 'chat_discovery.dart';
+import 'encryption.dart';
 import 'model.dart';
 
 /// class used to store keys per user id
@@ -39,7 +40,11 @@ abstract class Chat {
 
   /// Sends the [text] message to the other peer
   Message sendText(String text) {
-    final message = VerifiedMessage(address.address, userData, text, DateTime.now(), key);
+    String messageText = text;
+    if (encryptionKey != null) {
+      messageText = MessageEncryption.encryptMessage(text, encryptionKey!);
+    }
+    final message = VerifiedMessage(address.address, userData, messageText, DateTime.now(), key);
     sendMessage(message);
     return message;
   }
@@ -64,6 +69,14 @@ abstract class Chat {
   // the key is the address
   String get key;
   int get port;
+
+  // Add a shared encryption key
+  String? encryptionKey;
+
+  // Add method to set encryption key
+  void setEncryptionKey(String key) {
+    this.encryptionKey = key;
+  }
 }
 
 typedef MessageCallback = void Function(Message message);

@@ -55,7 +55,7 @@ Future<Chat> serverChat(MessageCallback messageCallback, DesktopNetworkProvider 
     }
       }, onConnectionError: (error, user) {
         if (user != null) {
-          print('An error occurred with ${user.username}: ${e.toString()}');
+          print('An error occurred with ${user.username}: ${error.toString()}');
         }
       });
   chatServer.start();
@@ -92,4 +92,23 @@ ArgResults getArgs(List<String> arguments) {
   ..addOption(WITH_ARG, abbr: 'w', help: 'Address of the chat host (if you are a client)')
   ..addOption(USERNAME_ARG, abbr: 'u', help: 'Username for the chat');
   return argParser.parse(arguments);
+}
+
+// Utility function to format date
+String formatDate(DateTime date) {
+  return '${date.hour}:${date.minute.toString().padLeft(2, '0')}';
+}
+
+// Utility function to convert String to InternetAddress
+Future<InternetAddress> toAddress(String address) async {
+  try {
+    return InternetAddress(address);
+  } catch (e) {
+    // Attempt to resolve hostname
+    List<InternetAddress> addresses = await InternetAddress.lookup(address);
+    if (addresses.isNotEmpty) {
+      return addresses.first;
+    }
+    throw Exception('Could not resolve address: $address');
+  }
 }

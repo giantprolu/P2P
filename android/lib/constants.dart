@@ -10,3 +10,4 @@ const kErrorColor = Color(0xFFF03738);
 
 const kDefaultPadding = 20.0;
 const androidMethodChannel = MethodChannel("tambapps/network");
+const APP_NAME = "P2P Chat";

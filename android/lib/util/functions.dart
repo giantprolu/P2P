@@ -32,5 +32,3 @@ Future<String> getDeviceId() async {
     return 'ios_' + iosInfo.identifierForVendor;
   }
 }
-
-const String APP_NAME = "P2P Messenger";

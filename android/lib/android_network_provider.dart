@@ -42,10 +42,26 @@ class _AndroidNetworkInterface extends NetworkInterface {
     List stringAddresses = map['addresses'] as List;
     List<InternetAddress> addresses = [];
     for (var string in stringAddresses) {
-      addresses.add(await toAddress(string));
+      addresses.add(await _toAddress(string));
     }
     return _AndroidNetworkInterface(map['name'], map['index'], map['supportsMulticast'],
         addresses);
+  }
+  
+  static Future<InternetAddress> _toAddress(address) async {
+    if (address == null) {
+      throw ArgumentError('address cannot be null');
+    }
+    if (address is InternetAddress) {
+      return address;
+    } else {
+      var addresses = await InternetAddress.lookup(address);
+      if (addresses.isEmpty) {
+        throw ArgumentError('address $address was not found');
+      } else {
+        return addresses[0];
+      }
+    }
   }
 
   @override

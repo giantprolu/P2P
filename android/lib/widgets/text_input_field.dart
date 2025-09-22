@@ -26,7 +26,7 @@ class ConversationTextInputField extends StatelessWidget {
           BoxShadow(
             offset: Offset(0, 4),
             blurRadius: 32,
-            color: Color(0xFF087949).withOpacity(0.08),
+            color: Color(0xFF087949).withValues(alpha: 20), // 0.08 opacity equivalent
           ),
         ],
       ),
@@ -39,7 +39,7 @@ class ConversationTextInputField extends StatelessWidget {
                   horizontal: kDefaultPadding * 0.75,
                 ),
                 decoration: BoxDecoration(
-                  color: kPrimaryColor.withOpacity(0.05),
+                  color: kPrimaryColor.withValues(alpha: 13), // 0.05 opacity equivalent
                   borderRadius: BorderRadius.circular(40),
                 ),
                 child: Row(
@@ -65,9 +65,9 @@ class ConversationTextInputField extends StatelessWidget {
                           Icons.send,
                           color: Theme.of(context)
                               .textTheme
-                              .bodyText1!
-                              .color!
-                              .withOpacity(0.64),
+                              .bodyMedium
+                              ?.color
+                              ?.withValues(alpha: 163), // 0.64 opacity equivalent
                         )),
                   ],
                 ),

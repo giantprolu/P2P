@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:p2p_chat_android/model/models.dart';
-import 'package:p2p_chat_android/util/functions.dart';
 import 'package:p2p_chat_android/widgets/text_input_field.dart';
 import 'package:p2p_chat_core/p2p_chat_core.dart';
 
@@ -40,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
 
   @override
   void initState() {
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
     super.initState();
   }
 
@@ -49,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
     final textTheme = Theme
         .of(context)
         .textTheme;
-    final conversationNameTextTheme = textTheme.bodyText1!.copyWith(fontSize: 19);
+    final conversationNameTextTheme = textTheme.bodyMedium?.copyWith(fontSize: 19);
     if (conversations.isEmpty) {
       return Scaffold(
         body: Center(
@@ -57,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text("Welcome to $APP_NAME\na Peer to Peer chat app", style: textTheme.headline4!.copyWith(color: Colors.white), textAlign: TextAlign.center,),
+                Text("Welcome to $APP_NAME\na Peer to Peer chat app", style: textTheme.headlineMedium?.copyWith(color: Colors.white), textAlign: TextAlign.center,),
                 Padding(padding: EdgeInsets.symmetric(horizontal: kDefaultPadding, vertical: 32),
 
                   child: UsernameTextInputField(onSubmit: this.updateUsername, username: ctx.userData.username,),),
@@ -65,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
                   child: Text('Search chat', style: Theme
                       .of(context)
                       .textTheme
-                      .headline6),
+                      .titleLarge),
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(
@@ -268,7 +267,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
 
   @override
   void dispose() {
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
 
