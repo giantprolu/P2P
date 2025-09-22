@@ -29,7 +29,14 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
 
+    kotlinOptions {
+        jvmTarget = "17"
+    }
     defaultConfig {
         applicationId "com.tambapps.p2p.chat.android"
         minSdkVersion 21
@@ -52,7 +59,7 @@ flutter {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.22"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0'
 }

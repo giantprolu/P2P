@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.tambapps.p2p.chat.android.app-mergeReleaseResources-4:/values/values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\nathn\\Desktop\\Projet\\p2p-chat-main\\android\\android\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "49",
+                        "endOffsets": "100"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\nathn\\Desktop\\Projet\\p2p-chat-main\\android\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "173,818",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "476,982"
+                    },
+                    "to": {
+                        "startLines": "3,7",
+                        "startColumns": "4,4",
+                        "startOffsets": "105,286",
+                        "endLines": "6,9",
+                        "endColumns": "12,12",
+                        "endOffsets": "281,450"
+                    }
+                }
+            ]
+        }
+    ]
+}

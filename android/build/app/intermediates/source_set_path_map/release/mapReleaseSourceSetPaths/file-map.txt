@@ -1,0 +1,8 @@
+com.tambapps.p2p.chat.android.app-main-0 C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\res
+com.tambapps.p2p.chat.android.app-release-1 C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\release\res
+com.tambapps.p2p.chat.android.app-pngs-2 C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\build\app\generated\res\pngs\release
+com.tambapps.p2p.chat.android.app-resValues-3 C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\build\app\generated\res\resValues\release
+com.tambapps.p2p.chat.android.app-packageReleaseResources-4 C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\build\app\intermediates\incremental\release\packageReleaseResources\merged.dir
+com.tambapps.p2p.chat.android.app-packageReleaseResources-5 C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\build\app\intermediates\incremental\release\packageReleaseResources\stripped.dir
+com.tambapps.p2p.chat.android.app-merged-not-compiled-resources-6 C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\build\app\intermediates\merged-not-compiled-resources\release
+com.tambapps.p2p.chat.android.app-release-7 C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\build\app\intermediates\merged_res\release\mergeReleaseResources

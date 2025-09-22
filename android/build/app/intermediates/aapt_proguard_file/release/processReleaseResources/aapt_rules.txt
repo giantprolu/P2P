@@ -1,0 +1,1 @@
+-keep class com.tambapps.p2p.chat.android.MainActivity { <init>(); }

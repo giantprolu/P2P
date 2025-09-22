@@ -1,0 +1,2 @@
+C:/Users/nathn/Desktop/Projet/p2p-chat-main/android/android/app/.cxx/RelWithDebInfo/3b4w1o4r/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/nathn/Desktop/Projet/p2p-chat-main/android/android/app/.cxx/RelWithDebInfo/3b4w1o4r/arm64-v8a/CMakeFiles/rebuild_cache.dir

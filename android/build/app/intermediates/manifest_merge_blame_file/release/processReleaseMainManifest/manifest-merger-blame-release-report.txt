@@ -1,0 +1,131 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.tambapps.p2p.chat.android"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:4:5-66
+11-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:4:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:5:5-78
+12-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:5:22-76
+13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+13-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:6:5-75
+13-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:6:22-73
+14    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+14-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:7:5-85
+14-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:7:22-83
+15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+15-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:8:5-78
+15-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:8:22-76
+16
+17    <!-- Bluetooth (Android 12+ nouveaux perms) -->
+18    <uses-permission android:name="android.permission.BLUETOOTH" />
+18-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:11:5-67
+18-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:11:22-65
+19    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+19-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:12:5-73
+19-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:12:22-71
+20    <uses-permission
+20-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:13:5-15:57
+21        android:name="android.permission.BLUETOOTH_SCAN"
+21-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:14:9-57
+22        android:usesPermissionFlags="neverForLocation" />
+22-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:15:9-55
+23    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+23-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:16:5-75
+23-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:16:22-73
+24
+25    <!-- Visibilité (API 30+) -->
+26    <queries>
+26-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:19:5-32:15
+27        <intent>
+27-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:20:9-23:18
+28            <action android:name="android.intent.action.VIEW" />
+28-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:21:13-64
+28-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:21:21-62
+29
+30            <data android:scheme="https" />
+30-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:22:13-43
+30-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:22:19-41
+31        </intent>
+32        <intent>
+32-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:24:9-27:18
+33            <action android:name="android.intent.action.VIEW" />
+33-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:21:13-64
+33-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:21:21-62
+34
+35            <data android:scheme="http" />
+35-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:22:13-43
+35-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:22:19-41
+36        </intent>
+37        <intent>
+37-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:28:9-31:18
+38            <action android:name="android.intent.action.DIAL" />
+38-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:29:13-64
+38-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:29:21-62
+39
+40            <data android:scheme="tel" />
+40-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:22:13-43
+40-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:22:19-41
+41        </intent>
+42    </queries>
+43
+44    <application
+44-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:34:5-59:19
+45        android:extractNativeLibs="true"
+46        android:icon="@mipmap/appicon"
+46-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:36:9-39
+47        android:label="P2P Messenger"
+47-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:35:9-38
+48        android:roundIcon="@mipmap/appicon" >
+48-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:37:9-44
+49        <activity
+49-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:39:9-54:20
+50            android:name="com.tambapps.p2p.chat.android.MainActivity"
+50-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:40:13-41
+51            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+51-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:44:13-163
+52            android:exported="true"
+52-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:41:13-36
+53            android:hardwareAccelerated="true"
+53-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:45:13-47
+54            android:launchMode="singleTop"
+54-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:42:13-43
+55            android:theme="@style/LaunchTheme"
+55-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:43:13-47
+56            android:windowSoftInputMode="adjustResize" >
+56-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:46:13-55
+57            <meta-data
+57-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:47:13-49:56
+58                android:name="io.flutter.embedding.android.NormalTheme"
+58-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:48:17-72
+59                android:resource="@style/NormalTheme" />
+59-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:49:17-54
+60
+61            <intent-filter>
+61-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:50:13-53:29
+62                <action android:name="android.intent.action.MAIN" />
+62-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:51:17-68
+62-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:51:25-66
+63
+64                <category android:name="android.intent.category.LAUNCHER" />
+64-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:52:17-76
+64-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:52:27-74
+65            </intent-filter>
+66        </activity>
+67
+68        <meta-data
+68-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:56:9-58:32
+69            android:name="flutterEmbedding"
+69-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:57:13-44
+70            android:value="2" />
+70-->C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\AndroidManifest.xml:58:13-30
+71    </application>
+72
+73</manifest>

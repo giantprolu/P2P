@@ -1,0 +1,2 @@
+C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\kotlin\com\tambapps\p2p\chat\android\BluetoothHandler.kt
+C:\Users\nathn\Desktop\Projet\p2p-chat-main\android\android\app\src\main\kotlin\com\tambapps\p2p\chat\android\MainActivity.kt

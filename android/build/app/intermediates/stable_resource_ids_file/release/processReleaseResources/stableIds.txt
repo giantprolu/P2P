@@ -1,0 +1,8 @@
+com.tambapps.p2p.chat.android:style/LaunchTheme = 0x7f040000
+com.tambapps.p2p.chat.android:mipmap/ic_launcher = 0x7f030003
+com.tambapps.p2p.chat.android:mipmap/appicon_foreground = 0x7f030002
+com.tambapps.p2p.chat.android:mipmap/appicon_background = 0x7f030001
+com.tambapps.p2p.chat.android:mipmap/appicon = 0x7f030000
+com.tambapps.p2p.chat.android:drawable/launch_background = 0x7f020000
+com.tambapps.p2p.chat.android:style/NormalTheme = 0x7f040001
+com.tambapps.p2p.chat.android:color/colorBackground = 0x7f010000

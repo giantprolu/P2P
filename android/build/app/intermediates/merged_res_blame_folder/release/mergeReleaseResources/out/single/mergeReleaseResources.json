@@ -1,0 +1,90 @@
+[
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-xxhdpi_appicon.png.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-xxhdpi/appicon.png"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-xhdpi_appicon_background.png.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-xhdpi/appicon_background.png"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-hdpi_appicon.png.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-hdpi/appicon.png"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-xhdpi_appicon.png.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-xhdpi/appicon.png"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-mdpi_appicon.png.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-mdpi/appicon.png"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-xxhdpi_appicon_background.png.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-xxhdpi/appicon_background.png"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-xxxhdpi_appicon.png.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-xxxhdpi/appicon.png"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/drawable-v21_launch_background.xml.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/drawable-v21/launch_background.xml"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-anydpi-v26_appicon.xml.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-anydpi-v26/appicon.xml"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-xxhdpi_appicon_foreground.png.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-xxhdpi/appicon_foreground.png"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-xhdpi_appicon_foreground.png.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-xhdpi/appicon_foreground.png"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-xxxhdpi_appicon_background.png.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-xxxhdpi/appicon_background.png"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-hdpi_appicon_foreground.png.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-hdpi/appicon_foreground.png"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-hdpi_appicon_background.png.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-hdpi/appicon_background.png"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-xxxhdpi_appicon_foreground.png.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-xxxhdpi/appicon_foreground.png"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-mdpi_appicon_foreground.png.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-mdpi/appicon_foreground.png"
+    },
+    {
+        "merged": "com.tambapps.p2p.chat.android.app-release-7:/mipmap-mdpi_appicon_background.png.flat",
+        "source": "com.tambapps.p2p.chat.android.app-main-0:/mipmap-mdpi/appicon_background.png"
+    }
+]
